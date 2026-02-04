@@ -2,6 +2,9 @@
 
 这是一个关于 LangChain 的深度学习与实践教程仓库，涵盖了从基础入门到高级 Agent 架构的多个阶段。本项目旨在通过实际的代码示例和 Notebook 教程，帮助开发者掌握 LangChain 生态系统的核心概念与最新特性。
 
+> LangChain系列框架的官方教程，默认使用OpenAI的API-Key，这对国内用户很不友好。
+> 因此，本项目使用**免费**的ModelScope API或者硅基流动 API，适合快速学习，少量测试，更无网络问题烦恼。
+
 ## 📁 项目结构
 
 本仓库分为三个主要模块，分别对应不同的学习阶段和技术栈：
@@ -47,5 +50,12 @@ uv sync
 - **Tools**: Tavily, Playwright, Trafilatura
 - **Environment**: Python 3.11+, `uv`
 
+## 🎯 待办事项 (TODO)
+
+- [ ] **提示词优化**：提供更多适配中文场景的系统提示词（System Prompt）模板与示例。
+- [ ] **多模型支持**：集成 DeepSeek 等国产大模型，扩展更多免费 API 适配器。
+- [ ] **Agent 进阶**：增加更多关于复杂多智能体协作（Multi-Agent Collaboration）的实战案例。
+- [ ] **工程化实践**：补充基于 LangSmith 的 Agent 评估、调试与追踪教程。
+- [ ] **文档完善**：为 `AutoPlanAgent` 模块提供更详细的设计架构说明。
 
 希望这个教程能帮助你在 LangChain 的学习道路上更进一步！
