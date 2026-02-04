@@ -9,21 +9,24 @@ from langchain_openai import ChatOpenAI
 from langchain_qwq import ChatQwQ, ChatQwen
 import random
 import time
+from dotenv import load_dotenv
+
+# 加载 .env 文件
+# 尝试在当前目录和上级目录寻找 .env
+load_dotenv()
+load_dotenv(os.path.join(os.path.dirname(__file__), '..', '.env'))
 
 MODEL = "Qwen/Qwen3-30B-A3B-Instruct-2507"
 
-TAVILY_API_KEY = "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"
+TAVILY_API_KEY = os.getenv("TAVILY_API_KEY")
 
-MODELSCOPE_API_KEY_LIST = [
-    "ms-e2666046-2f3b-4c76-bcc0-e21f8ebf9ea1", # lzc
-    "ms-92f3ff7c-7c0b-4a5c-823a-ecd2730e27cf" # lyh
-]
+MODELSCOPE_API_KEY_LIST = os.getenv("MODELSCOPE_API_KEYS", "").split(",")
+# 过滤掉空字符串
+MODELSCOPE_API_KEY_LIST = [key for key in MODELSCOPE_API_KEY_LIST if key]
 
-SiliconFlow_API_KEY_LIST = [
-    'sk-egdfshbbmhtlgjnklhqjsnvpqbpknicdnzbkjzjezxhpctpl',
-    'sk-mossnrfgkrhbogvycylslvkwgmoehdozijhjjkwexwenldlk',
-    'sk-fqedzihnpwhlfjoegvmejvcspmpbxbmjcfygmzkjsavdpsyh',
-]
+SiliconFlow_API_KEY_LIST = os.getenv("SILICONFLOW_API_KEYS", "").split(",")
+# 过滤掉空字符串
+SiliconFlow_API_KEY_LIST = [key for key in SiliconFlow_API_KEY_LIST if key]
 
 def setup_logger(name: Optional[str] = None, log_file: Optional[str] = None, level=logging.INFO, console_output: bool = True, clear_existing: bool = False):
     """设置 Logger，支持输出到控制台和文件"""
