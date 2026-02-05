@@ -1,0 +1,35 @@
+# 数据分析报告
+
+## 执行摘要
+
+{{ report.executive_summary }}
+
+## 数据来源
+
+{% for item in report.data_sources %}
+- {{ item }}
+{% endfor %}
+
+## 分析方法
+
+{% for item in report.methods %}
+- {{ item }}
+{% endfor %}
+
+## 关键发现
+
+{% for item in report.findings %}
+- {{ item }}
+{% endfor %}
+
+## 业务建议
+
+{% for item in report.recommendations %}
+- {{ item }}
+{% endfor %}
+
+## 输出物
+
+{% for item in report.artifacts %}
+- {{ item }}
+{% endfor %}

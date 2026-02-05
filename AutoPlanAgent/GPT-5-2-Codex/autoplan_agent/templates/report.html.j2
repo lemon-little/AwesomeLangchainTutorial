@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>数据分析报告</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; }
+    h1 { font-size: 20px; }
+    h2 { font-size: 16px; margin-top: 18px; }
+    ul { padding-left: 18px; }
+  </style>
+</head>
+<body>
+  <h1>数据分析报告</h1>
+  <h2>执行摘要</h2>
+  <p>{{ report.executive_summary }}</p>
+  <h2>数据来源</h2>
+  <ul>
+    {% for item in report.data_sources %}
+    <li>{{ item }}</li>
+    {% endfor %}
+  </ul>
+  <h2>分析方法</h2>
+  <ul>
+    {% for item in report.methods %}
+    <li>{{ item }}</li>
+    {% endfor %}
+  </ul>
+  <h2>关键发现</h2>
+  <ul>
+    {% for item in report.findings %}
+    <li>{{ item }}</li>
+    {% endfor %}
+  </ul>
+  <h2>业务建议</h2>
+  <ul>
+    {% for item in report.recommendations %}
+    <li>{{ item }}</li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
